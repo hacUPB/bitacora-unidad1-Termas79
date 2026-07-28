@@ -1,0 +1,14 @@
+    @5
+    D=M
+    @10
+    D=D-A
+    @ET1
+    D;JLT
+    @7
+    M=0
+    @END
+    0;JMP
+(ET1)
+    @7
+    M=1
+(END)
