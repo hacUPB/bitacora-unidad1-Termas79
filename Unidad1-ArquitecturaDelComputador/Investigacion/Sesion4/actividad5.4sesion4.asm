@@ -23,7 +23,22 @@
     @LOOP
     0;JMP
 (ET1)
-    
-(END)
-    @END
+    @cont
+    A=M
+    M=0         // borrar línea actual
+    @cont
+    M=M+1       // mover dirección a la derecha
+    A=M
+    M=-1        // dibujar línea en nueva posición
+    @LOOP
+    0;JMP
+(ET2)
+    @cont
+    A=M
+    M=0         // borrar línea actual
+    @cont
+    M=M-1       // mover dirección a la izquierda
+    A=M
+    M=-1        // dibujar línea en nueva posición
+    @LOOP
     0;JMP
