@@ -15,7 +15,7 @@ Se genera un loop que mantiene saltando de ROM[7] a ROM[6]
 
 ![alt text](ej1sesion1.png)
 ----------------------------------------------------------------------------------------------------------------
-Expeerimento #2
+Experimento #2
 
 --> ROM[0] = Apunta RAM[5]
 --> ROM[1] = Almacena A (5) en D
@@ -23,6 +23,8 @@ Expeerimento #2
 --> ROM[3] = Almacena D (5) mas A (10) en el nuevo D
 --> ROM[4] = Apunta RAM[20]
 --> ROM[5] = Almacena D (15) en M de RAM[20]
+
+![alt text](exp2sesion2_img.png)
 ----------------------------------------------------------------------------------------------------------------
 ROM
 - Memoria de lectura que almacena instrucciones para leerlas y ejectutarlas para luego ser almacenadas en la memoria RAM.

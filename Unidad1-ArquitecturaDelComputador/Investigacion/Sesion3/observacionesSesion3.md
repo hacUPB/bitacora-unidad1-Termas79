@@ -15,4 +15,12 @@ Actividad 4
 
 Inicialmente, el código hack no funcionaba debido a que no agregué la línea '0;JMP' para realizar el salto de END en caso de que no se cumpliera la condición. Después de agregarlo si hace el salto correctamente al final del código cuando M en RAM[5] es mayor que 10.
 
+VARIABLES
+- Los primeros 15 registros en la memoria RAM son variables predefinidas
+(RAM[0]-RAM[15]) . Del 16 en adelante se usan para asignar VARIABLES
+
+ETIQUETAS
+- La posición en la memoria ROM de cada etiqueta con sus instrucciones está dada
+por su posición de PC asignado por el ensamblador. 
+
 ![alt text](actividad4sesion3_img.png)
