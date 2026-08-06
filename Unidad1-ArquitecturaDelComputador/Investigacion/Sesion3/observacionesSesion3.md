@@ -1,4 +1,4 @@
-Actividad 3
+## Actividad 3
 
 - La ALU (Arithmetic Logic Unit) hace parte de la CPU y realiza operaciones aritméticas y lógicas.  En este caso, la ALU recibe la condición de que si se detecta una tecla presionada en el teclado, debe de indicar a los espacios de memoria que manejan la pantalla (@SCREEN) que creen una línea negra de 16 píxeles por cada iteración en el loop mientras se mantenga la tecla oprimida. En caso contrario, se van eliminando estas líneas de forma regresiva mientras no se esté presionando una tecla.
 - El registro PC sirve para ir por cada una de las instrucciones de memoria almacenadas en la ROM de forma consecutiva de acuerdo a las instrucciones que vaya leyendo.
@@ -11,15 +11,15 @@ Actividad 3
 ![alt text](programSesion3_img.png)
 
 ----------------------------------------------------------------------------------------------------------------
-Actividad 4
+## Actividad 4
 
 Inicialmente, el código hack no funcionaba debido a que no agregué la línea '0;JMP' para realizar el salto de END en caso de que no se cumpliera la condición. Después de agregarlo si hace el salto correctamente al final del código cuando M en RAM[5] es mayor que 10.
 
-VARIABLES
+### VARIABLES
 - Los primeros 15 registros en la memoria RAM son variables predefinidas
 (RAM[0]-RAM[15]) . Del 16 en adelante se usan para asignar VARIABLES
 
-ETIQUETAS
+### ETIQUETAS
 - La posición en la memoria ROM de cada etiqueta con sus instrucciones está dada
 por su posición de PC asignado por el ensamblador. 
 

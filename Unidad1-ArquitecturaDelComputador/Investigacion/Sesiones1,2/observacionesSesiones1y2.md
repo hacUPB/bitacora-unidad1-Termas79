@@ -1,4 +1,4 @@
-Experimento #1
+## Experimento #1
 
 - Se almacena el valor 3 en RAM[16] porque almacena el valor guardado en el registro D que era 3 por las operaciones anteriores.
 
@@ -13,9 +13,10 @@ Ciclos fetch-decode-execute
 --> ROM[7] = Salta a ejecutar la instrucción almacenada en ROM[A] (ROM[6])
 Se genera un loop que mantiene saltando de ROM[7] a ROM[6]
 
-![alt text](ej1sesion1.png)
+![alt text](ej1sesion2.png)
+
 ----------------------------------------------------------------------------------------------------------------
-Experimento #2
+## Experimento #2
 
 --> ROM[0] = Apunta RAM[5]
 --> ROM[1] = Almacena A (5) en D
@@ -26,8 +27,8 @@ Experimento #2
 
 ![alt text](exp2sesion2_img.png)
 ----------------------------------------------------------------------------------------------------------------
-ROM
+### ROM
 - Memoria de lectura que almacena instrucciones para leerlas y ejectutarlas para luego ser almacenadas en la memoria RAM.
 
-RAM
+### RAM
 - Memoria de lectura y escritura que almacena información de datos asignados por instrucciones ejecutadas en el ciclo fetch-decode-execute.

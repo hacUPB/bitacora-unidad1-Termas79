@@ -1,4 +1,4 @@
-PUNTERO
+## PUNTERO
 Variable que guarda una dirección de memoria.
     - El puntero apunta a la dirección de una variable cont
     - Puede modificar la variable
@@ -20,7 +20,7 @@ Variable que guarda una dirección de memoria.
 
 --> `p = 20;`
 ----------------------------------------------------------------------------------------------------------------
-Actividad 1
+## Actividad 1
 
 - Primer programa: Para que 'p' sea puntero de 'a', se le asigna al M de 'p' la dirección de memoria de 'a' para luego apuntarlo con A=M y asignarle el valor 20 guardado en D.
 
@@ -30,7 +30,7 @@ Actividad 1
 
 ![alt text](actividad2Sesion6_img.png)
 
-Actividad 2
+## Actividad 2
 
 - Este programa es largo, ya que hay que asignar todos los valores del arreglo en 10 espacios de memoria desde la dirección 16 hasta la 25. Después se definen las variables 'sum' que va guardando el resultado de la suma; 'j' que va guardando el contador del loop y 'ptr' que mantiene la dirección del elemento del arreglo actual cada vez que se itera el loop.
 
