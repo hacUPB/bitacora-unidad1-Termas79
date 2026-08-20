@@ -71,4 +71,5 @@
 ### Código en C#
 ![alt text](Actividad5-CSharp_Sesion2img.png)
 
-- 
+- **Copia en C++:** Se copia una instancia del objeto original en lugar de modificarlo. Este crea otro objeto en otra dirección de memoria y solo modifica el orignal cuando se referencia directamente a este con su punteto para modificar sus datos e imprimirlos. En este caso es *Independiente*.
+- **Copia en C#:** Cuando se copia un objeto haciendo referencia a este, la copia modifica los datos del original y terminan teniendo ambos los valores definidos en la copia. En este caso *no es independiente*.
