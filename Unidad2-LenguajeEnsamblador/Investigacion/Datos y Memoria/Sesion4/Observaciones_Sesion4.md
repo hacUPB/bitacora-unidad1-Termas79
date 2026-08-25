@@ -17,5 +17,5 @@
 ![alt text](Actividad10.1_Sesion4img.png)
 1. Cuando se crea un objeto en el **stack**, mantiene el valor de una variable definida localmente temporalmente hasta que sale del bloque (conjunto de instrucciones). Cuando se crea un objeto en el **heap**, este se almacena en la memoria disponible de forma dinámica y se accede a este cuando se necesite, por lo que se debe llamar la función de delete para borrarlo de la memoria dentro de `main()`.
 ### Actividad 10.2
-![alt text](image.png)
+![alt text](Actividad10.2.1_Sesion4img.png)
 1. No, porque no está definido `pBloque2` cuando se intenta imprimir. Esto se debe a que se crea esta instancia de objeto local dentro de un conjunto de instrucciones, por lo que al salir de este se borra el objeto y luego no se puede llamar porque no existe.
