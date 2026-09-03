@@ -48,12 +48,10 @@ void ofApp::draw() {
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if (key == 'c') {
-		while (strokes.front != nullptr) {
-			strokes.dequeue();
-		}
+		strokes.clear();
 	}
 	else if (key == 'a') {
-        strokes.maxSize = strokes.maxSize == 50 ? 100 : 50;
+		strokes.maxSize = strokes.maxSize == 50 ? 100 : 50;
 
 		while (strokes.size > strokes.maxSize) {
 			strokes.dequeue();
@@ -61,11 +59,17 @@ void ofApp::keyPressed(int key) {
 
 		if (strokes.rear != nullptr) {
 			while (strokes.size < strokes.maxSize) {
-              float radius = ofRandom(5, 20);
+				float radius = ofRandom(5, 20);
 				ofColor color;
 				color.setHsb(ofRandom(255), 200, 255);
-              float opacity = ofRandom(100, 255);
-				strokes.enqueue(strokes.rear->x, strokes.rear->y, radius, color, opacity);
+				float opacity = ofRandom(100, 255);
+
+				strokes.enqueue(
+					strokes.rear->x,
+					strokes.rear->y,
+					radius,
+					color,
+					opacity);
 			}
 		}
 	}

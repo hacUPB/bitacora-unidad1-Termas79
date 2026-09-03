@@ -21,6 +21,8 @@ public:
 	int maxSize;
 	BrushQueue(int _maxSize);
 	~BrushQueue();
+	BrushQueue(const BrushQueue&) = delete;
+	BrushQueue& operator=(const BrushQueue&) = delete;
 	void enqueue(float x, float y, float radius, ofColor color, 
 				 float opacity);
 	void dequeue();
@@ -75,8 +77,7 @@ void BrushQueue::clear() {
 }
 // Implementa aquí `isEmpty()`
 bool BrushQueue::isEmpty() {
-	// TODO: retornar si la cola está vacía.
-	return size == 0;
+	return front == nullptr;
 }
 
 class ofApp : public ofBaseApp {
