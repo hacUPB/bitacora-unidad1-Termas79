@@ -3,3 +3,7 @@
     - *Data:* Puede ser por ejemplo un vector de 2 posiciones que almacena datos. Es una instancia de la clase que lo crea.
     - *Puntero:* Apunta al siguiente nodo dentro de la lista.
     `emplace_back`: Método para agregar elementos a una lista enlazada.
+
+`&a`: Asigna dirección de memoria a puntero.
+`*p`: Asigna valor a puntero.
+`p->`: Desenlaza puntero.
