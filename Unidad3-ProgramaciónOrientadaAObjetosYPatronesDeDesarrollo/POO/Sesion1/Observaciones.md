@@ -84,3 +84,21 @@ Al crearse una partícula, primero se procesa de acuerdo a qué valores para cad
 - Ambas tablas usan la misma cantidad de espacios de memoria ya que comparten los mismos atributos como partículas particulares que heredan los atributos de la clase padre `Particle`. Ya varían son en los atributos locales específicos para el tipo de partícula que se está creando, como en el caso de `StarExplosion` que se le asignan valores de `innerRadius`, `outerRadius` y `rays`.
 
 **Rpta/=** La tabla de funciones virtuales funciona para asignar valores únicos a cada instancia de objeto que se crea de una clase que no necesariamente se replican entre cada instancia. En este programa, como se crean aleatoriamente varias instancias de partículas con distintas formas y efectos, se crea una tabla de funciones virtuales para cada una donde se le asignan sus valores correspondientes a los atributos de cada partícula, para que cuando se creen en el programa, este sepa cómo debe mostrar cada partícula creada sin entrar en conflicto con el resto de partículas creadas.
+
+# Actividad 4
+
+## Punto 1
+![alt text](captura1actividad4.png)
+
+- Hay 2 errores de compilación en el código. Esto se debe a que se está intentando acceder a unas variables locales que no se pueden acceder desde fuera de la clase en la que se definió (protected, private). Solamente cuando las lineas estaban comentadas no había error ya que solamente se estaba accediendo a la vriable establecida como pública.
+
+## Punto 2
+![alt text](captura2actividad4.png)
+
+- Hay un error de compilación, porque como indica el error se está intentando acceder a una variable establecida como privada dentro de la clase `MyClass`.
+
+![alt text](captura3actividad4.png)
+
+- En este caso si se pueden acceder a las variables privadas, porque se usa referencia por puntero a cada variable sin intentar acceder a cada una directamente porque el puntero solo toma el valor de esta sin alterar el estado de esta directamente. 
+
+**Encapsulamiento:** Es una forma de protección de datos de valores que no queremos que sean accedidos libremente porque o son modificados raramente o el acceso a estos debe ser restringido para evitar la pérdida de datos o la vulneración de la información almacenada. Por lo tanto, el encapsulamiento permite acceder a los valores almacenados en las variables encapsuladas solamente cuando se necesitan, sin tener que alterar las variables originales.
