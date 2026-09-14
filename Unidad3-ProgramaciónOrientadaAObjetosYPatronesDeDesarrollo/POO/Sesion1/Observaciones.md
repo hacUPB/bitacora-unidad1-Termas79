@@ -61,3 +61,26 @@ public class Circulo : Figura{
 - Cuando presiono espacio, la clase `KeyPressed` llama a `createRisingParticle()` 1000 veces con el loop para crear 1000 partículas a la vez.
 ![alt text](screenshot_2161.png)
 ![alt text](screenshot_2764.png)
+
+# Actividad 3
+
+## Punto 1
+**Antes:** Primero se asignan espacios de memoria para almacenar los datos de las funciones como segmentos de código. Luego, cada vez que se crea una partícula se asigna un espacio en el Stack a cada una que luego se elimina cuando termina de explotar.
+
+**Después:**
+![alt text](captura1actividad3.png)
+![alt text](captura2actividad3.png)
+Al crearse una partícula, primero se procesa de acuerdo a qué valores para cada parámetro le fueron asignados y les asigna una dirección de memoria. Luego a la párticula se le asigna otra dirección de memoria para su posición dentro de la lista partículas que se hayan creado desde el momento que se crea hasta cuando se destruye.
+
+## Punto 2
+- En la memoria, para crear una partícula de tipo circular, se deben heredar tanto los atributos de `explosion particle` y `particle` que tienen los atributos necesarios para crear esta partícula. Para cada uno se le asigna una posición de memoria en el stack, y al final se asigna el valor de esa partícula completa en el último valor de memoria reservado para la creación de esta partícula.
+
+![alt text](captura3actividad3.png)
+
+- Para cada atributo de partícula asignada a esta instancia de `ExplosionParticle` se le asigna una posición de memoria dentro de esta tabla virtual. Como están asignados como `void`, estos son guardados de forma temporal durante el período de vida de la partícula para luego ser eliminados cuando esta deje de estar presente en el programa.
+
+![alt text](captura4actividad3.png)
+
+- Ambas tablas usan la misma cantidad de espacios de memoria ya que comparten los mismos atributos como partículas particulares que heredan los atributos de la clase padre `Particle`. Ya varían son en los atributos locales específicos para el tipo de partícula que se está creando, como en el caso de `StarExplosion` que se le asignan valores de `innerRadius`, `outerRadius` y `rays`.
+
+**Rpta/=** La tabla de funciones virtuales funciona para asignar valores únicos a cada instancia de objeto que se crea de una clase que no necesariamente se replican entre cada instancia. En este programa, como se crean aleatoriamente varias instancias de partículas con distintas formas y efectos, se crea una tabla de funciones virtuales para cada una donde se le asignan sus valores correspondientes a los atributos de cada partícula, para que cuando se creen en el programa, este sepa cómo debe mostrar cada partícula creada sin entrar en conflicto con el resto de partículas creadas.
