@@ -102,3 +102,11 @@ Al crearse una partícula, primero se procesa de acuerdo a qué valores para cad
 - En este caso si se pueden acceder a las variables privadas, porque se usa referencia por puntero a cada variable sin intentar acceder a cada una directamente porque el puntero solo toma el valor de esta sin alterar el estado de esta directamente. 
 
 **Encapsulamiento:** Es una forma de protección de datos de valores que no queremos que sean accedidos libremente porque o son modificados raramente o el acceso a estos debe ser restringido para evitar la pérdida de datos o la vulneración de la información almacenada. Por lo tanto, el encapsulamiento permite acceder a los valores almacenados en las variables encapsuladas solamente cuando se necesitan, sin tener que alterar las variables originales.
+
+# Actividad 5
+
+- El depurador muestra de forma escalonada las herencia de la clase `CircularExplosion`, donde los valores de cada clase son asignados de acuerdo a los valores y métodos manejados en cada uno. Como `Particle` es heredado por `ExplosionParticle`, este se encuentra formando parte de `ExplosionParticle` y sus atributos son asignados a una sección de memoria dedicada a manejar la tabla de funciones virtuales para esta partícula. Como `ExplosionParticle` es heredado por `CircularExplosion`, se encuentra formando parte de este y sus atributos son almacenados en la parte `Static` de la memoria para ser usados por `CircularExplosion`.
+
+- **Herencia en C++:** Para implementar herencia en C++, se utilizan clases base que funcionan como fundaciones que se utilizan repetidamente en otras clases que puedan heredar sus atributos porque hacen parte de estos y por lo tanto pueden heredar clases padres con herencia sin tener que implementar múltiples veces el mismo tipo de atributos para cada clase hija que pueda heredar de las bases. Una clase hereda de otra indicándola con dos puntos (:) señalando la clase de la que va a heredar, ejecutando primero los constructores de la clase padre y luego los de la hija. Cada cambio a un atributo heredado de una clase padre se maneja localmente sin alterar los de la base.
+
+- 
