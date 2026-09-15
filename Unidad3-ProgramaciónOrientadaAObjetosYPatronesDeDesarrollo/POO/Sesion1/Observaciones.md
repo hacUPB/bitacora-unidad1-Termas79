@@ -54,13 +54,13 @@ public class Circulo : Figura{
 
 - Dentro del programa, cada vez que hago click izquierdo o derecho se crea una instancia de partícula con color, velocidad, dirección y explosión aleatorios definidos en `ofApp.h` cuando se llama al método `createRisingParticle()`
 
-![alt text](screenshot_1025.png)
+![alt text](captura1actividad2.png)
 
 - Cuando presiono 's', la clase `keyPressed` toma una captura de la pantalla del programa con el método `ofSaveScreen(...)`
 
 - Cuando presiono espacio, la clase `KeyPressed` llama a `createRisingParticle()` 1000 veces con el loop para crear 1000 partículas a la vez.
-![alt text](screenshot_2161.png)
-![alt text](screenshot_2764.png)
+
+![alt text](captura2actividad2.png)
 
 # Actividad 3
 
