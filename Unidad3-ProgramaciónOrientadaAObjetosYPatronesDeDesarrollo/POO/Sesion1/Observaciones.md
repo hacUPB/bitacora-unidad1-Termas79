@@ -109,4 +109,37 @@ Al crearse una partícula, primero se procesa de acuerdo a qué valores para cad
 
 - **Herencia en C++:** Para implementar herencia en C++, se utilizan clases base que funcionan como fundaciones que se utilizan repetidamente en otras clases que puedan heredar sus atributos porque hacen parte de estos y por lo tanto pueden heredar clases padres con herencia sin tener que implementar múltiples veces el mismo tipo de atributos para cada clase hija que pueda heredar de las bases. Una clase hereda de otra indicándola con dos puntos (:) señalando la clase de la que va a heredar, ejecutando primero los constructores de la clase padre y luego los de la hija. Cada cambio a un atributo heredado de una clase padre se maneja localmente sin alterar los de la base.
 
-- 
+## Experimento Herencia Múltiple
+
+```
+#include <iostream>
+using namespace std;
+
+class Carro {
+public:
+    void conducir() {
+        cout << "Conduciendo en carretera." << endl;
+    }
+};
+
+class Bote {
+public:
+    void navegar() {
+        cout << "Navegando en agua." << endl;
+    }
+};
+
+class VehiculoDoble : public Carro, public Bote {
+public:
+    void usar() {
+        conducir();
+        navegar();
+    }
+};
+
+int main() {
+    VehiculoDoble miVehiculo;
+    miVehiculo.usar();
+    return 0;
+}
+```
