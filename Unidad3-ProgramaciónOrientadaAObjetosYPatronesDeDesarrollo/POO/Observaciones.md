@@ -143,3 +143,20 @@ int main() {
     return 0;
 }
 ```
+
+# Actividad 6
+
+
+
+# Actividad 7
+
+1. ¿Cómo y por qué de la implementación de cada una de las extensiones solicitadas al caso de estudio?
+
+
+
+2. ¿Cómo y por qué de la implementación de los conceptos de encapsulamiento, herencia y polimorfismo en tu código?
+
+
+
+3. Explica cómo verificaste que cada una de las extensiones funciona correctamente, muestra capturas de pantalla del depurador donde evidencias lo anterior, en particular el polimorfismo en tiempo de ejecución.
+
