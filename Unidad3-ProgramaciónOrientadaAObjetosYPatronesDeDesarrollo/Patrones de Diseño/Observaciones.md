@@ -31,3 +31,19 @@
 1. El patrón **Observer** elimina la necesidad de que un objeto esté verificando durante toda la duración del programa el estado del polling constantemente para verificar su estado actual. Solo cuando el **Subject** realiza las llamadas correspondientes para realizar cambios a su estado es cuando el objeto (observer) lo hace.
 
 2. 
+
+3. 
+
+4. - Optimiza el depurador evitando que tenga que leer constante y permanentemente todos los elementos de una clase que no deberían ser modificados o leídos si no es necesario.
+
+- Facilita la implementación de nuevos estados para cada caso que se tenga que aplicar a los objetos.
+
+- Ejecuta eficazmente los métodos aplicados ya que solo son leídos para cada observador del sujeto que está realizando la notificación.
+
+# Actividad 10
+
+1. El propósito principal de un patrón Factory es la estandarización de la implementación de cada tipo de objeto que se quiera crear a partir de una clase base sin tener que acceder innecesariamente a todos los tipos de partícula para saber cual se tiene que crear.
+
+2. Evita tener que asignar múltiples responsabilidades y funciones al método `ofApp::setup`. Se modifican e implementan los métodos asociados a la creación de cada tipo de objeto en sus propias clases y por lo tanto cada clase se encarga de su objeto sin interferir en otras.
+
+3. 
