@@ -77,3 +77,54 @@ Para poder trabajar con OpenGL, lo primero es configurar su 'estudio' para que l
 # Actividad 4
 ## Punto 1
 La *CPU* procesa uno a uno los datos del gráfico a procesar (asumiendo que no tiene procesador gráfico integrado), dibujando iteradamente los arreglos de shaders, lo cual es lento y de baja calidad. La *GPU* en cambio procesa cada vértice de la gráfica al mismo tiempo para plasmar la imagen en alta calidad y  mayor rapidez debido a la alta capacidad de procesamiento vectorial que tiene.
+
+## Punto 2
+**1)** - Vertex Shading: Se encarga de renderizar las caras de los objetos que se puedan ver en la pantalla del jugador. Cada vértice visible se procesa a través del espacio utilizando sus coordenadas en el espacio y de la cámara para calcular cómo se proyecta cada cara en la pantalla.
+
+- Rasterización: Se encarga de pulir las caras proyectadas calculando el espacio utilizado por los píxeles de las caras para que las texturas y colores se vean adecuadamente, y verifica cuales caras se grafican de acuerdo a su valor de Z-Buffer para evitar procesar caras no visibles en la cámara.
+
+- Fragment Shading: Se encarga de aplicar sombras a las texturas de acuerdo a su posición relativa a las fuentes de luz presentes en la escena.
+
+**2)** El pipeline programable de OpenGL permite a los desarrolladores indicar cómo se comporta el proceso de renderizado de 3D a 2D en la escena, dando más libertad de implementación y de instrucción al programa para optimizar el uso de recursos.
+
+**3)** La **rasterización** lee las caras de los objetos en la escena, y pasa a asignar cada parte de cada cara en *segmentos* que se convierten en píxeles para que puedan ser vistos en pantalla.
+
+**4)** Los **fragmentos** son los segmentos de píxeles que forman la cara del objeto que se está renderizando en la escena.
+
+**5)** El **z-buffer** se encarga de indicar al pipeline la ubicación espacial y la distancia a la cámara de cada segmento. Esto es útil para saber qué segmentos están superpuestos o sobrepuestos de otros para solamente renderizar los que están más cercanos y visibles a la cámara.
+
+**6)** El **aliasing** ocurre cuando el pixel se pinta en su totalidad de acuerdo al segmento que está mostrando, generando objetos con bordes dentados. El **anti-aliasing** ayuda a reducir el efecto del aliasing al agregar más puntos de sampleo para fraccionar las partes que se renderizan sobre cada píxel, suavizando la imagen del objeto.
+
+**7)** No es estrictamente necesario, pero si la escena aplica efectos de iluminación, el objeto se verá igual sin importar el estado de la escena. El **fragment shader** y la **iluminación** se relacionan porque de acuerdo a la iluminación presente y la función matemática que se aplica a cada segmento, se pueden lograr efectos visuales más realistas de acuerdo a la iluminación presente.
+
+**8)** Si hay múltiples fuentes de iluminación, la **gpu** tiene que aplicar procesos de renderizado y sombreado para cada segmento para cada fuente de luz, lo que implica múltiples pipelines que tiene que manejar haciendo que tenga una carga de trabajo mayor.
+
+## Punto 3
+
+**1)** - Primero hay que definir los vértices del triángulo que van a estar, sus posiciones y atributos antes de asignarles el renderizador (VAO).
+- Al definir los vértices, estos pasan por el **vertex shader** que se encarga de graficarlos en el espacio de renderizado establecido (VBO).
+- Para graficar el triángulo, se ejecuta el shader de fragmentos que revisa cada píxel dentro del triángulo definido espacialmente por los vértices y les aplica los atributos especificados en el método.
+
+**2)** Para usar un shader en OpenGL, se debe indicar primero cuales son los vértices que se quieren definir en el espacio y cuales van a ser los segmentos que se verán renderizados en el pipeline y se mostrarán en el volumen de la cámara. Al hacer esto, se deben desvincular los VAO del VBO para evitar que todos los comandos enviados a OpenGL se apliquen al objeto.
+
+## Punto 4
+
+**Ejecución del programa con los 3 shaders**
+![alt text](actividad4_shadersTriang.png)
+
+## Actividad 5
+**1) Código triángulo interactivo**
+--> Unidad4-ProgramaciónGráficaModerna\actividad5_trianguloInteractivo.cpp
+
+**2) Captura Código en Funcionamiento**
+![alt text](actividad5_trianguloInteractivo.png)
+
+**3)** El proceso de normalización consiste en tomar las coordenadas absolutas en píxeles del mouse entregadas por el sistema operativo y convertirlas en una escala unificada, independientemente de la resolución de la ventana. Primero se utiliza la función `glfwGetCursorPos` para devolver la posición (x, y) del cursor. Luego se divide `x` por el ancho de la ventana y `y` por el largo, luego para transformarlos en un valor entre 0 y 1.Finalmente, se utilizan condicionales para evitar que el cálculo se salga de rango si el usuario mueve el cursor por fuera del borde de la ventana de renderizado.
+
+Estos valores brutos normalizados de [0.0, 1.0] son ideales para operaciones de color, ya que los fragment shaders de OpenGL esperan parámetros de color RGBA exactamente en este rango numérico.
+
+**4)** El NDC es un sistema de coordenadas donde el centro de la pantalla es exactamente el origen (0.0, 0.0). Los ejes se extienden desde `-1.0` a `1.0` en todas las direcciones tridimensionales (X, Y, Z). Todo lo que caiga fuera de la "caja" de -1 a 1 es recortado por la tarjeta gráfica y no se dibuja.
+
+Para el *eje `x`*, La fórmula `x * 2 - 1` toma el rango de pantalla [0.0, 1.0] calculado anteriormente y lo estira. Un 0.0 (extremo izquierdo) se convierte en -1.0. Un 0.5 (mitad) se convierte en 0.0 (centro NDC). Un 1.0 se convierte en 1.0. 
+
+Para el *eje `y`*, la fórmula 1 - y * 2 realiza la misma operación, pero con una inversión de eje. Al restar sobre 1, invertimos físicamente las coordenadas del mouse para que los movimientos físicos hacia arriba correspondan a incrementos positivos en el espacio de OpenGL.
